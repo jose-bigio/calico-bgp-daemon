@@ -11,6 +11,10 @@ ifeq ($(ARCH),ppc64le)
         ARCHTAG:=-ppc64le
 endif
 
+ifeq ($(ARCH),s390x)
+        ARCHTAG:=-s390x
+endif
+
 CALICO_BUILD?=calico/go-build$(ARCHTAG)
 SRC_FILES=$(shell find . -type f -name '*.go')
 GOBGPD_VERSION?=$(shell git describe --tags --dirty)
